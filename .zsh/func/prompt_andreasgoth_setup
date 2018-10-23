@@ -1,0 +1,105 @@
+# My ZSH prompt, nothing fancy
+
+function in_git_repo() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+function git_dirty_symbol() {
+  local color_dirty_branch="131"
+  if in_git_repo; then;
+    if ! test -z "$(git status --porcelain --ignore-submodules)"; then
+      echo -n "%F{$color_dirty_branch}❖%f"
+    fi
+  fi
+}
+
+function git_branch() { 
+  local color_branch_name="244"
+  if in_git_repo; then 
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+    echo -n "%F{$color_branch_name}${ref#refs/heads/}%f"
+  fi
+}
+
+function push_pull_status() {
+  local color_push_pull_symbols="244"
+  if in_git_repo; then
+    local_commit=$(git rev-parse @ 2>&1)
+    remote_commit=$(git rev-parse @{u} 2>&1)
+    common_base=$(git merge-base @ @{u} 2>&1) # last common commit
+    if [[ $local_commit != $remote_commit ]]; then
+      if [[ $common_base == $remote_commit ]]; then
+        echo -n '⇡'
+      elif [[ $common_base == $local_commit ]]; then
+        echo -n '⇣'
+      else
+        echo -n "⇡⇣"
+      fi
+    fi
+  fi
+}
+
+function repo_has_commit {
+  if git rev-parse HEAD &> /dev/null; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+function time_since_last_commit {
+  if ! repo_has_commit; then
+    return
+  fi
+
+  local time_color="246"
+  local human_time
+  now=`date +%s`
+  last_commit=`git log --pretty=format:'%at' -1 2>/dev/null`
+
+  seconds_since_last_commit=$((now-last_commit))
+  local years=$(( seconds_since_last_commit / 60 / 60 / 24 / 365 ))
+  local days=$(( seconds_since_last_commit / 60 / 60 / 24 % 365 ))
+  local hours=$(( seconds_since_last_commit / 60 / 60 % 24 ))
+  local minutes=$(( seconds_since_last_commit / 60 % 60 ))
+  local seconds=$(( seconds_since_last_commit % 60 ))
+    
+  if [ $seconds_since_last_commit -gt $((60*60*24*365)) ]; then
+    echo -n "%F{$time_color}${years}y ${days}d%f "
+  elif [ $seconds_since_last_commit -gt $((60*60*24)) ]; then
+    echo -n "%F{$time_color}${days}d%f "
+  elif [ $seconds_since_last_commit -gt $((60*60)) ]; then
+    echo -n "%F{$time_color}${hours}h%f "
+  elif [ $seconds_since_last_commit -gt 60 ]; then
+    echo -n "%F{$time_color}${minutes}m%f "
+  else
+    echo -n "%F{$time_color}${seconds}s%f "
+  fi
+}
+
+prompt_andreasgoth_precmd() {
+  local color_dir="244"
+  local color_prompt_symbol="252"
+  local color_prompt_symbol_error="red"
+  local color_arrows_branch="246"
+
+  CURRENT_DIR="%F{$color_dir}%c%f"
+  PROMPT_SYMBOL="%(?.%F{$color_prompt_symbol}▸%f.%F{$color_prompt_symbol_error}▸%f)"
+  CURRENT_DIR="%F{$color_dir}%c%f"
+
+  PROMPT="$CURRENT_DIR $PROMPT_SYMBOL "
+  RPROMPT=" $(time_since_last_commit)$(git_branch)$(git_dirty_symbol) $(push_pull_status)"
+}
+
+function prompt_andreasgoth_setup {
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd prompt_andreasgoth_precmd
+}
+
+prompt_andreasgoth_setup "$@"
+

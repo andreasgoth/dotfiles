@@ -1,5 +1,5 @@
-export LC_ALL=sv_SE.UTF-8
-export LANG=sv_SE.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Set custom prompt
 setopt PROMPT_SUBST

@@ -1,4 +1,7 @@
 .DS_Store
+/.aws
+/.rncache
+/.slocdata
 /VirtualBox\ VMs
 /.task
 /.docker

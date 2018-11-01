@@ -1,4 +1,17 @@
 .DS_Store
+/VirtualBox\ VMs
+/.task
+/.docker
+/.electrum
+/.vagrant.d
+/.phpls
+/.rbenv
+/.bundle
+/.gem
+/.mix
+/.hex
+/.LiveReplayer*
+/.itmstransporter
 /.CFUserTextEncoding
 /.history
 /.lesshsQ
@@ -13,6 +26,8 @@
 /.Trash
 /.cache
 /.config
+/.composer
+/.cargo
 /.vim/.netrwhist
 /Creative\ Cloud\ Files
 /.vscode

@@ -49,3 +49,5 @@ alias nvimcfg='nvim ~/.config/nvim/init.vim'
 alias nvimcolors='nvim ~/.config/nvim/colors/andreasgoth.vim'
 alias zshrc='nvim ~/.zshrc'
 
+# zsh completion smartcase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

@@ -45,3 +45,7 @@ alias repos='cd /Volumes/Data/repos'
 alias lr='cd /Volumes/Data/repos/fsm/livereplayer'
 alias lrweb='cd /Volumes/Data/repos/fsm/livereplayer/webapp'
 alias fsmapp='cd /Volumes/Data/repos/fsm/app'
+alias nvimcfg='nvim ~/.config/nvim/init.vim'
+alias nvimcolors='nvim ~/.config/nvim/colors/andreasgoth.vim'
+alias zshrc='nvim ~/.zshrc'
+

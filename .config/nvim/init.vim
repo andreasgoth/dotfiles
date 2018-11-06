@@ -45,22 +45,23 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Plugins
 call plug#begin('~/.config/nvim/plugins')
-
 Plug 'junegunn/vim-easy-align'
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
 Plug 'pangloss/vim-javascript'
-let g:javascript_plugin_jsdoc = 1
-
 Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
 Plug 'elixir-editors/vim-elixir'
 Plug 'airblade/vim-gitgutter'
 Plug '/usr/local/opt/fzf'
-nnoremap <c-t> :FZF<cr>
-nnoremap <c-f> :FZF<cr>
-
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
- 
+" EasyAlign
+xmap ga <plug>(EasyAlign)
+nmap ga <plug>(EasyAlign)
+" Vim Javascript
+let g:javascript_plugin_jsdoc = 1
+" FZF
+nnoremap <c-t> :FZF<cr>
+nnoremap <c-p> :FZF<cr>
+nnoremap <c-f> :Ag<cr>
+nnoremap <c-l> :Lines<cr>

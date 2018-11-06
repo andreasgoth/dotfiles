@@ -48,6 +48,7 @@ alias fsmapp='cd /Volumes/Data/repos/fsm/app'
 alias nvimcfg='nvim ~/.config/nvim/init.vim'
 alias nvimcolors='nvim ~/.config/nvim/colors/andreasgoth.vim'
 alias zshrc='nvim ~/.zshrc'
+alias hosts='sudo nvim /etc/hosts'
 
 # zsh completion smartcase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

@@ -1,6 +1,9 @@
 .DS_Store
+/.local
 /.aws
+/.config/configstore
 /.rncache
+/.gnupg*
 /.slocdata
 /VirtualBox\ VMs
 /.task
@@ -28,7 +31,6 @@
 /.LiveReplayer-meta
 /.Trash
 /.cache
-/.config
 /.composer
 /.cargo
 /.vim/.netrwhist

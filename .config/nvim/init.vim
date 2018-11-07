@@ -16,7 +16,8 @@ set background=dark
 set history=10000
 set number
 set expandtab
-set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 set showmatch
 set incsearch
@@ -27,6 +28,11 @@ set showcmd
 set switchbuf=useopen
 set scrolloff=5
 set colorcolumn=80
+
+" Indentation
+autocmd FileType html       setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType php        setlocal ts=4 sts=4 sw=4 expandtab
 
 " Unmap the arrow keys
 no  <down>  <Nop>

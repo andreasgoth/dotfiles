@@ -52,3 +52,6 @@ alias hosts='sudo nvim /etc/hosts'
 
 # zsh completion smartcase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"

@@ -1,6 +1,10 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Add paths
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
+
 # Set custom prompt
 setopt PROMPT_SUBST
 autoload -Uz promptinit
@@ -55,3 +59,4 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
+

@@ -1,6 +1,8 @@
 .DS_Store
 /.local
 /.aws
+/.rustup
+/.terraform.d
 /.config/configstore
 /.rncache
 /.gnupg*

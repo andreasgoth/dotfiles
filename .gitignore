@@ -42,9 +42,13 @@
 /Desktop
 /Documents
 /Downloads
-/Library/*
 /Movies
+/Library/*
+!/Library/Services
 /Music
 /Pictures
 /Public
 /repos
+/private
+/process
+/projects

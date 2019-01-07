@@ -12,6 +12,7 @@ set termguicolors
 set background=dark
 :colorscheme andreasgoth
 
+
 " Basic editing configuration 
 set history=10000
 set number
@@ -28,11 +29,25 @@ set showcmd
 set switchbuf=useopen
 set scrolloff=5
 set colorcolumn=80
+set wildmode=longest,list
 
 " Indentation
 autocmd FileType html       setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php        setlocal ts=4 sts=4 sw=4 expandtab
+
+" Multipurpose tab key
+" Indent if we're at the beginning of a line. Else, do completion.
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
 
 " Unmap the arrow keys
 no  <down>  <Nop>
@@ -71,3 +86,4 @@ nnoremap <c-t> :FZF<cr>
 nnoremap <c-p> :FZF<cr>
 nnoremap <c-f> :Ag<cr>
 nnoremap <c-l> :Lines<cr>
+

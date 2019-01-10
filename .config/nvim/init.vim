@@ -74,6 +74,8 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'airblade/vim-gitgutter'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'w0rp/ale'
 call plug#end()
 
 " EasyAlign

@@ -12,8 +12,8 @@ set termguicolors
 set background=dark
 :colorscheme andreasgoth
 
-
 " Basic editing configuration 
+set hidden
 set history=10000
 set number
 set expandtab
@@ -30,10 +30,12 @@ set switchbuf=useopen
 set scrolloff=5
 set colorcolumn=80
 set wildmode=longest,list
+set mouse=a
 
 " Indentation
 autocmd FileType html       setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css        setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php        setlocal ts=4 sts=4 sw=4 expandtab
 
 " Multipurpose tab key

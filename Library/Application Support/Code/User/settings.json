@@ -1,0 +1,95 @@
+{
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.noFolderBackground" : "#0A0A0D",
+        "statusBar.debuggingBackground": "#511f1f",
+        "editorCursor.foreground": "#EF4E2D"
+    },
+    "workbench.activityBar.visible": false,
+    "editor.fontFamily": "InputMonoCondensed-Light, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [
+        80,
+        99
+    ],
+    "editor.minimap.enabled": false,
+    "editor.minimap.maxColumn": 80,
+    "todohighlight.keywords": [
+        "XXX",
+        "DEBUG",
+        "FIXME",
+        "TODO",
+        "BUG",
+        "NOTE",
+        "REVIEW",
+        "REFACTOR",
+        "REMOVE:",
+        "HACK",
+        "@todo",
+        "INCOMPLETE"
+    ],
+    "todohighlight.defaultStyle": {
+        "color": "#FF6021",
+        "borderRadius": "6px",
+        "backgroundColor": "#000",
+        //other styling properties goes here ...
+        // NOTE: hehehe
+        // TODO: asdfasdf
+        // FIXME: asdfasdf
+        // INCOMPLETE: asdfklj
+        // REVIEW: asdfsajkdf
+    },
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0,
+    "files.exclude": {
+        "**/tmp": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.history": true
+    },
+    "files.insertFinalNewline": true,
+    "workbench.startupEditor": "welcomePage",
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": true,
+    "eslint.autoFixOnSave": false,
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.snippetSuggestions": "top",
+    "terminal.integrated.fontSize": 14,
+    "editor.wordWrapColumn": 72,
+    "git.autofetch": true,
+    "editor.quickSuggestionsDelay": 500,
+    "docker.showExplorer": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.history": true,
+    },
+    "local-history.path": "/Users/andreasgoth/.history/",
+    "window.restoreWindows": "all",
+    "editor.autoClosingBrackets": false,
+    "editor.lineNumbers": "on",
+    "editor.folding": true,
+    "workbench.colorTheme": "hrhr",
+    "editor.colorDecorators": false,
+    "npm.enableScriptExplorer": true,
+    "emmet.includeLanguages": {
+        "HTML (Eex)": "html"
+    },
+    "editor.lineHeight": 0,
+    "editor.fontSize": 14,
+    "breadcrumbs.enabled": true,
+    "editor.hover.delay": 500,
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.parameterHints.enabled": true,
+    "editor.suggestOnTriggerCharacters": false
+}

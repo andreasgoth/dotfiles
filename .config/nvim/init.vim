@@ -51,6 +51,10 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 " Unmap the arrow keys
 no  <down>  <Nop>
 no  <left>  <Nop>

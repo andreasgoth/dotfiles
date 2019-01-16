@@ -3,7 +3,6 @@ export LANG=en_US.UTF-8
 
 # Add paths
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
 
 # Set custom prompt
 setopt PROMPT_SUBST
@@ -60,6 +59,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
+# Ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Python
+export PATH="/Users/andreasgoth/Library/Python/2.7/bin:$PATH"
+
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
   autoload -U up-line-or-beginning-search
@@ -80,3 +85,4 @@ bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
 if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
 fi
+

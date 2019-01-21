@@ -35,8 +35,8 @@ hi CursorColumn     guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NO
 hi LineNr           guifg=#3D3D3D     guibg=black       gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
 
 hi VertSplit        guifg=#202020     guibg=#202020     gui=NONE      ctermfg=darkgray    ctermbg=darkgray    cterm=NONE
-hi StatusLine       guifg=#CCCCCC     guibg=#202020     gui=italic    ctermfg=white       ctermbg=darkgray    cterm=NONE
-hi StatusLineNC     guifg=black       guibg=#202020     gui=NONE      ctermfg=blue        ctermbg=darkgray    cterm=NONE  
+hi StatusLine       guifg=#ffffff     guibg=#000000     gui=italic    ctermfg=white       ctermbg=darkgray    cterm=NONE
+hi StatusLineNC     guifg=#777777     guibg=#000000     gui=NONE      ctermfg=blue        ctermbg=darkgray    cterm=NONE  
 
 hi Folded           guifg=#a0a8b0     guibg=#384048     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi Title            guifg=#f6f3e8     guibg=NONE        gui=bold      ctermfg=NONE        ctermbg=NONE        cterm=NONE
@@ -54,7 +54,7 @@ hi WarningMsg       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16
 hi SpellBad         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16          ctermbg=160         cterm=NONE
 
 " Message displayed in lower left, such as --INSERT--
-hi ModeMsg          guifg=black       guibg=#C6C5FE     gui=BOLD      ctermfg=black       ctermbg=cyan        cterm=BOLD
+hi ModeMsg          guifg=black       guibg=#56FFC4     gui=BOLD      ctermfg=black       ctermbg=cyan        cterm=BOLD
 
 hi MatchParen     guifg=#f6f3e8     guibg=#857b6f     gui=BOLD      ctermfg=white       ctermbg=darkgray    cterm=NONE
 hi Pmenu          guifg=#f6f3e8     guibg=#444444     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE

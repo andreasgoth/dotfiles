@@ -3,6 +3,7 @@ export LANG=en_US.UTF-8
 
 # Add paths
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set custom prompt
 setopt PROMPT_SUBST

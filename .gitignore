@@ -1,6 +1,7 @@
 .DS_Store
 /.local
 /.aws
+/gems
 /.rustup
 /.terraform.d
 /.config/configstore

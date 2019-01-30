@@ -51,6 +51,9 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[

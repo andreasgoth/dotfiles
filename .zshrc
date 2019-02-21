@@ -74,6 +74,8 @@ if [[ "${terminfo[kcuu1]}" != "" ]]; then
   autoload -U up-line-or-beginning-search
   zle -N up-line-or-beginning-search
   bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+  bindkey "^[[A" up-line-or-beginning-search # Up
+  bindkey "^[[B" down-line-or-beginning-search # Down
 fi
 
 # start typing + [Down-Arrow] - fuzzy find history backward

@@ -5,7 +5,7 @@ let g:colors_name = "andreasgoth"
 set background=dark
 hi clear
 
-if exists("syntax_on")                                
+if exists("syntax_on")
   syntax reset
 endif
 
@@ -36,7 +36,7 @@ hi LineNr           guifg=#3D3D3D     guibg=black       gui=NONE      ctermfg=da
 
 hi VertSplit        guifg=#202020     guibg=#202020     gui=NONE      ctermfg=darkgray    ctermbg=darkgray    cterm=NONE
 hi StatusLine       guifg=#ffffff     guibg=#000000     gui=italic    ctermfg=white       ctermbg=darkgray    cterm=NONE
-hi StatusLineNC     guifg=#777777     guibg=#000000     gui=NONE      ctermfg=blue        ctermbg=darkgray    cterm=NONE  
+hi StatusLineNC     guifg=#777777     guibg=#000000     gui=NONE      ctermfg=blue        ctermbg=darkgray    cterm=NONE
 
 hi Folded           guifg=#a0a8b0     guibg=#384048     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi Title            guifg=#f6f3e8     guibg=NONE        gui=bold      ctermfg=NONE        ctermbg=NONE        cterm=NONE
@@ -62,7 +62,7 @@ hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE
 hi Search         guifg=#FFEB87     guibg=#444444     gui=underline ctermfg=NONE        ctermbg=NONE	      cterm=underline
 
 " Syntax highlighting
-hi Comment          guifg=#68847B
+hi Comment          guifg=#E5D8A1  gui=bold
 hi String           guifg=#B8C8C4
 hi Number           guifg=#aaa1ca
 
@@ -101,21 +101,26 @@ hi link SpecialComment  Special
 hi link Debug           Special
 
 " Special for XML
-hi link xmlTag          Keyword 
-hi link xmlTagName      Conditional 
-hi link xmlEndTag       Identifier 
+hi link xmlTag          Keyword
+hi link xmlTagName      Conditional
+hi link xmlEndTag       Identifier
 
 " Special for HTML
-hi link htmlTag         Keyword 
-hi link htmlTagName     Conditional 
-hi link htmlEndTag      Identifier 
+hi link htmlTag         Keyword
+hi link htmlTagName     Conditional
+hi link htmlEndTag      Identifier
 
 " Special for Javascript
-hi link javaScriptNumber      Number 
+hi link javaScriptNumber      Number
 
 " Special for Python
-hi  link pythonEscape         Keyword      
+hi  link pythonEscape         Keyword
 
 " Special for CSharp
-hi  link csXmlTag             Keyword      
+hi  link csXmlTag             Keyword
 
+" ALE linter (eslint etc)
+hi ALEErrorSign    guifg=#FC1928
+hi ALEWarningSign  guifg=#FC7A29
+hi ALEError        guifg=#FC1928  guibg=#000000 gui=bold,undercurl  guisp=#fb0015
+hi ALEWarning      guifg=#FC7A29  guibg=#000000 gui=bold,undercurl  guisp=#fd9216

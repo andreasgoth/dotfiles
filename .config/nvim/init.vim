@@ -30,6 +30,49 @@ set colorcolumn=80
 set wildmode=longest,list
 set mouse=a
 
+" Statusline
+
+function! LinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ▲', all_non_errors)
+endfunction
+
+function! LinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
+endfunction
+
+function! LinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓' : ''
+endfunction
+
+set statusline=
+set statusline +=\ %#StatusLinePath#
+set statusline +=\ %{expand('%:h')}       " path
+set statusline +=/%#StatusLineFileName#
+set statusline +=%t                       " filename
+set statusline +=%m%*                     " modified flag
+set statusline +=\ %#StatusLineFileType#  " file type
+set statusline +=%y%*                     " file type
+set statusline+=\ %#StatusLineALEOK#
+set statusline+=\ %{LinterOK()}
+set statusline+=\ %#StatusLineALEWarning#
+set statusline+=\ %{LinterWarnings()}
+set statusline+=\ %#StatusLineALEError#
+set statusline+=\ %{LinterWarnings()}
+set statusline+=\ %#StatusLine#
+
+set statusline +=%=                       " %= means right side
+set statusline +=\ %-3v                  " virtual column number
+set statusline +=\ %l/%L\ \              " current line
+
 " Indentation
 autocmd FileType html       setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab

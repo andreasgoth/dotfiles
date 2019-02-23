@@ -4,6 +4,7 @@
 /.config/coc
 /.local
 /.aws
+/.vscode-history
 /gems
 /.rustup
 /.terraform.d

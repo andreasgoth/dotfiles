@@ -118,6 +118,18 @@ filetype plugin indent on
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" Rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
 " Plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'junegunn/vim-easy-align'

@@ -29,6 +29,7 @@ set scrolloff=5
 set colorcolumn=80
 set wildmode=longest,list
 set mouse=a
+set clipboard=unnamed
 
 " Statusline
 

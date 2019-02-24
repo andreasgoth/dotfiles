@@ -5,6 +5,9 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
+let mapleader=" "
+map <leader>s :source ~/.config/nvim/init.vim<cr>
+
 " Colors
 set termguicolors
 set background=dark

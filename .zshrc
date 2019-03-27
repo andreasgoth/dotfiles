@@ -2,9 +2,11 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Add paths
+export GOPATH=$HOME/go
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # Set custom prompt
 setopt PROMPT_SUBST

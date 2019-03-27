@@ -2,7 +2,7 @@
 
 ping -c 1 10.0.1.16
 if [[ $? -ne 0 ]]; then
-  echo "Backup server ping failed, aborting"
+  echo "Ping failed"
   exit 1
 fi
 

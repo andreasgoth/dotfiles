@@ -1,4 +1,4 @@
-" Something something
+" andreasgoth color theme
 
 let g:colors_name = "andreasgoth"
 
@@ -9,16 +9,6 @@ if exists("syntax_on")
   syntax reset
 endif
 
-hi pythonSpaceError ctermbg=red guibg=red
-
-highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
-highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
-highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
-highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
-
-highlight PmenuSel ctermfg=16 ctermbg=156
-highlight ColorColumn guibg=#111111
-
 " General colors
 hi Normal           guifg=#f6f3e8   guibg=#161616   gui=NONE
 hi NonText          guifg=#070707   guibg=black     gui=NONE
@@ -27,6 +17,7 @@ hi Cursor           guifg=black     guibg=220       gui=NONE
 hi CursorLine       guifg=NONE      guibg=#121212
 hi CursorLineNR     guifg=#cccccc   guibg=#000000
 hi CursorColumn     guifg=NONE      guibg=#121212   gui=NONE
+hi ColorColumn                      guibg=#111111
 hi LineNr           guifg=#3D3D3D   guibg=black     gui=NONE
 
 hi VertSplit        guifg=#202020   guibg=#202020   gui=NONE
@@ -39,6 +30,7 @@ hi Visual           guifg=#000000   guibg=#FFEB87   gui=NONE
 
 hi SpecialKey       guifg=#808080   guibg=#343434   gui=NONE
 
+hi Ignore           guifg=gray      guibg=black     gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
 hi WildMenu         guifg=green     guibg=yellow    gui=NONE
 hi PmenuSbar        guifg=black     guibg=white     gui=NONE
 
@@ -76,42 +68,49 @@ hi Special          guifg=#E18964
 hi Delimiter        guifg=#00A0A0
 hi Operator         guifg=#B0B0B0
 
-hi link Character       Constant
-hi link Boolean         Constant
-hi link Float           Number
-hi link Repeat          Statement
-hi link Label           Statement
-hi link Exception       Statement
-hi link Include         PreProc
-hi link Define          PreProc
-hi link Macro           PreProc
-hi link PreCondit       PreProc
-hi link StorageClass    Type
-hi link Structure       Type
-hi link Typedef         Type
-hi link Tag             Special
-hi link SpecialChar     Special
-hi link SpecialComment  Special
-hi link Debug           Special
+hi link Character         Constant
+hi link Boolean           Constant
+hi link Float             Number
+hi link Repeat            Statement
+hi link Label             Statement
+hi link Exception         Statement
+hi link Include           PreProc
+hi link Define            PreProc
+hi link Macro             PreProc
+hi link PreCondit         PreProc
+hi link StorageClass      Type
+hi link Structure         Type
+hi link Typedef           Type
+hi link Tag               Special
+hi link SpecialChar       Special
+hi link SpecialComment    Special
+hi link Debug             Special
 
 " Special for XML
-hi link xmlTag          Keyword
-hi link xmlTagName      Conditional
-hi link xmlEndTag       Identifier
+hi link xmlTag            Keyword
+hi link xmlTagName        Conditional
+hi link xmlEndTag         Identifier
 
 " Special for HTML
-hi link htmlTag         Keyword
-hi link htmlTagName     Conditional
-hi link htmlEndTag      Identifier
+hi link htmlTag           Keyword
+hi link htmlTagName       Conditional
+hi link htmlEndTag        Identifier
 
 " Special for Javascript
 hi link javaScriptNumber  Number
 
 " Special for Python
-hi  link pythonEscape     Keyword
+hi link pythonEscape      Keyword
+hi pythonSpaceError ctermbg=red guibg=red
 
 " Special for CSharp
 hi  link csXmlTag         Keyword
+
+" Diff
+highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
+highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
+highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
+highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
 
 " Status line
 hi User1                  guifg=#808080  guibg=black           " path
@@ -126,4 +125,18 @@ hi ALEErrorSign           guifg=#FC1928
 hi ALEWarningSign         guifg=#FC7A29
 hi ALEError               guifg=#FC1928  gui=bold,undercurl  guisp=#fb0015
 hi ALEWarning             guifg=#FC7A29  gui=bold,undercurl  guisp=#fd9216
+
+" FZF colors
+hi FzfFg                  guifg=#ffffff
+hi FzfFgPlus              guifg=#56ffc4
+hi FzfBg                  guibg=#000000 ctermbg=black
+hi FzfBgPlus              guibg=#000000
+hi FzfHighlight           guifg=#56ffc4
+hi FzfHighlightPlus       guifg=#fd844f gui=bold
+hi FzfInfo                guifg=#cccccc
+hi FzfPrompt              guifg=#ffffff
+hi FzfPointer             guifg=#999999
+hi FzfMarker              guifg=#cccccc
+hi FzfSpinner             guifg=#ff0000
+hi FzfHeader              guifg=yellow
 

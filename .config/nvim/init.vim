@@ -13,7 +13,7 @@ set termguicolors
 set background=dark
 colorscheme andreasgoth
 
-" Basic editing configuration 
+" Basic editing configuration
 set hidden
 set history=10000
 set number
@@ -35,7 +35,11 @@ set mouse=a
 set splitbelow splitright
 set clipboard=unnamed
 
-" Statusline
+" ALE
+let g:ale_sign_column_always = 1
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_error = '×'
+let g:ale_lint_delay = 500
 
 function! LinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
@@ -58,21 +62,21 @@ function! LinterOK() abort
   return l:counts.total == 0 ? '✓' : ''
 endfunction
 
+" Statusline
 set statusline=
-set statusline +=\ %#StatusLinePath#
+set statusline +=\%1* " User 1 color (statusline path)
 set statusline +=\ %{expand('%:h')}       " path
-set statusline +=/%#StatusLineFileName#
+set statusline +=/%2* " User 2 color (statusline filename)
 set statusline +=%t                       " filename
-set statusline +=%m%*                     " modified flag
-set statusline +=\ %#StatusLineFileType#  " file type
-set statusline +=%y%*                     " file type
-set statusline+=\ %#StatusLineALEOK#
+set statusline +=%m                     " modified flag
+set statusline +=\ %3*  " file type
+set statusline +=%y                     " file type
+set statusline+=\ %4*
 set statusline+=\ %{LinterOK()}
-set statusline+=\ %#StatusLineALEWarning#
+set statusline+=\ %5*
 set statusline+=\ %{LinterWarnings()}
-set statusline+=\ %#StatusLineALEError#
-set statusline+=\ %{LinterWarnings()}
-set statusline+=\ %#StatusLine#
+set statusline+=\ %6*
+set statusline+=\ %{LinterErrors()}%*
 
 set statusline +=%=                       " %= means right side
 set statusline +=\ %-3v                  " virtual column number
@@ -113,7 +117,7 @@ ino <down>  <Nop>
 ino <left>  <Nop>
 ino <right> <Nop>
 
-imap <c-c> <Esc> 
+imap <c-c> <Esc>
 
 filetype plugin indent on
 

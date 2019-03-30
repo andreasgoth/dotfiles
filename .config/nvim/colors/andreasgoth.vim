@@ -11,10 +11,6 @@ endif
 
 hi pythonSpaceError ctermbg=red guibg=red
 
-hi StatusLine ctermbg=darkgrey ctermfg=white
-hi StatusLineNC ctermbg=black ctermfg=lightgrey
-hi VertSplit ctermbg=black ctermfg=lightgrey
-
 highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
 highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
@@ -24,36 +20,35 @@ highlight PmenuSel ctermfg=16 ctermbg=156
 highlight ColorColumn guibg=#111111
 
 " General colors
-hi Normal           guifg=#f6f3e8   guibg=#161616   gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
-hi NonText          guifg=#070707   guibg=black     gui=NONE      ctermfg=black      ctermbg=NONE        cterm=NONE
+hi Normal           guifg=#f6f3e8   guibg=#161616   gui=NONE
+hi NonText          guifg=#070707   guibg=black     gui=NONE
 
-hi Cursor           guifg=black     guibg=220       gui=NONE      ctermfg=black      ctermbg=220         cterm=NONE
+hi Cursor           guifg=black     guibg=220       gui=NONE
 hi CursorLine       guifg=NONE      guibg=#121212
 hi CursorLineNR     guifg=#cccccc   guibg=#000000
-hi CursorColumn     guifg=NONE      guibg=#121212   gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=BOLD
-hi LineNr           guifg=#3D3D3D   guibg=black     gui=NONE      ctermfg=darkgray   ctermbg=NONE        cterm=NONE
+hi CursorColumn     guifg=NONE      guibg=#121212   gui=NONE
+hi LineNr           guifg=#3D3D3D   guibg=black     gui=NONE
 
-hi VertSplit        guifg=#202020   guibg=#202020   gui=NONE      ctermfg=darkgray   ctermbg=darkgray    cterm=NONE
-hi StatusLine       guifg=#ffffff   guibg=#000000   gui=italic    ctermfg=white      ctermbg=darkgray    cterm=NONE
-hi StatusLineNC     guifg=#777777   guibg=#000000   gui=NONE      ctermfg=blue       ctermbg=darkgray    cterm=NONE
+hi VertSplit        guifg=#202020   guibg=#202020   gui=NONE
+hi StatusLine       guifg=#ffffff   guibg=#000000   gui=italic
+hi StatusLineNC     guifg=#000000   guibg=#333333   gui=NONE
 
-hi Folded           guifg=#a0a8b0   guibg=#384048   gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
-hi Title            guifg=#f6f3e8   guibg=NONE      gui=bold      ctermfg=NONE       ctermbg=NONE        cterm=NONE
-hi Visual           guifg=#000000   guibg=#FFEB87   gui=NONE      ctermfg=NONE       ctermbg=236         cterm=NONE
+hi Folded           guifg=#a0a8b0   guibg=#384048   gui=NONE
+hi Title            guifg=#f6f3e8   guibg=NONE      gui=bold
+hi Visual           guifg=#000000   guibg=#FFEB87   gui=NONE
 
-hi SpecialKey       guifg=#808080   guibg=#343434   gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
+hi SpecialKey       guifg=#808080   guibg=#343434   gui=NONE
 
-hi WildMenu         guifg=green     guibg=yellow    gui=NONE      ctermfg=black      ctermbg=yellow      cterm=NONE
-hi PmenuSbar        guifg=black     guibg=white     gui=NONE      ctermfg=black      ctermbg=white       cterm=NONE
-"hi Ignore           guifg=gray      guibg=black     gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
+hi WildMenu         guifg=green     guibg=yellow    gui=NONE
+hi PmenuSbar        guifg=black     guibg=white     gui=NONE
 
-hi Error            guifg=NONE      guibg=NONE      gui=undercurl ctermfg=16         ctermbg=red         cterm=NONE  guisp=#FF6C60 " undercurl color
-hi ErrorMsg         guifg=#FF6C60   guibg=#000000   gui=BOLD      ctermfg=16         ctermbg=red         cterm=NONE
-hi WarningMsg       guifg=white     guibg=#FF6C60   gui=BOLD      ctermfg=16         ctermbg=red         cterm=NONE
-hi SpellBad         guifg=white     guibg=#FF6C60   gui=BOLD      ctermfg=16         ctermbg=160         cterm=NONE
+hi Error            guifg=NONE      guibg=NONE      gui=undercurl guisp=#FF6C60 " undercurl color
+hi ErrorMsg         guifg=#FF6C60   guibg=#000000   gui=BOLD
+hi WarningMsg       guifg=white     guibg=#FF6C60   gui=BOLD
+hi SpellBad         guifg=white     guibg=#FF6C60   gui=BOLD
 
 " Message displayed in lower left, such as --INSERT--
-hi ModeMsg          guifg=black     guibg=#56FFC4   gui=BOLD      ctermfg=black      ctermbg=cyan        cterm=BOLD
+hi ModeMsg          guifg=black     guibg=#ffffff   gui=BOLD
 
 hi MatchParen       guifg=#f6f3e8   guibg=#857b6f   gui=BOLD      ctermfg=white      ctermbg=darkgray    cterm=NONE
 hi Pmenu            guifg=#f6f3e8   guibg=#444444   gui=NONE      ctermfg=NONE       ctermbg=NONE        cterm=NONE
@@ -119,17 +114,16 @@ hi  link pythonEscape     Keyword
 hi  link csXmlTag         Keyword
 
 " Status line
-hi StatusLineFileName     guifg=#ffffff  guibg=#000000  gui=bold
-hi StatusLinePath         guifg=#cccccc  guibg=#000000
-hi StatusLineFileType     guifg=#666666  guibg=#000000
+hi User1                  guifg=#808080  guibg=black           " path
+hi User2                  guifg=#ffffff  guibg=black  gui=bold " filename
+hi User3                  guifg=#666666  guibg=black           " file type
+hi User4                  guifg=#6CA84E  guibg=black  gui=bold " ale ok
+hi User5                  guifg=#FC7A29  guibg=black  gui=bold " ale warn
+hi User6                  guifg=#FC1928  guibg=black  gui=bold " ale error
 
 " ALE linter (eslint etc)
 hi ALEErrorSign           guifg=#FC1928
 hi ALEWarningSign         guifg=#FC7A29
-hi ALEError               guifg=#FC1928  guibg=#000000 gui=bold,undercurl  guisp=#fb0015
-hi ALEWarning             guifg=#FC7A29  guibg=#000000 gui=bold,undercurl  guisp=#fd9216
-
-hi StatusLineALEError     guifg=#FC1928  guibg=#000000 gui=none  guisp=#fb0015
-hi StatusLineALEWarning   guifg=#FC7A29  guibg=#000000 gui=none  guisp=#fd9216
-hi StatusLineALEOK        guifg=#6CA84E  guibg=#000000 gui=bold
+hi ALEError               guifg=#FC1928  gui=bold,undercurl  guisp=#fb0015
+hi ALEWarning             guifg=#FC7A29  gui=bold,undercurl  guisp=#fd9216
 

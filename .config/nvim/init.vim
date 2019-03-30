@@ -196,3 +196,19 @@ let g:gutentags_ctags_exclude = [
   \"node_modules",
 \]
 
+" Customize fzf colors to match color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'FzfFg'],
+  \ 'bg':      ['bg', 'FzfBg'],
+  \ 'hl':      ['fg', 'FzfHighlight'],
+  \ 'fg+':     ['fg', 'FzfFgPlus'],
+  \ 'bg+':     ['bg', 'FzfBgPlus', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'FzfHighlightPlus'],
+  \ 'info':    ['fg', 'FzfInfo'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'FzfPrompt'],
+  \ 'pointer': ['fg', 'FzfPointer'],
+  \ 'marker':  ['fg', 'FzfMarker'],
+  \ 'spinner': ['fg', 'FzfSpinner'],
+  \ 'header':  ['fg', 'FzfHighlight'] }
+

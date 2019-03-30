@@ -152,11 +152,13 @@ call plug#end()
 " EasyAlign
 xmap ga <plug>(EasyAlign)
 nmap ga <plug>(EasyAlign)
+
 " Vim Javascript
 let g:javascript_plugin_jsdoc = 1
+
 " FZF
-nnoremap <c-t> :FZF<cr>
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-t> :GFiles --exclude-standard --others --cached<cr>
+nnoremap <c-p> :GFiles --exclude-standard --others --cached<cr>
 nnoremap <c-f> :Ag<cr>
 nnoremap <c-l> :Lines<cr>
 

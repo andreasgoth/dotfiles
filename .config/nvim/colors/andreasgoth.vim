@@ -9,6 +9,8 @@ if exists("syntax_on")
   syntax reset
 endif
 
+syntax keyword jsCommentTodo contained TODO FIXME XXX TBD INCOMPLETE DEBUG BUG NOTE REVIEW REFACTOR REMOVE HACK @todo
+
 " General colors
 hi Normal           guifg=#f6f3e8   guibg=#161616   gui=NONE
 hi NonText          guifg=#070707   guibg=black     gui=NONE
@@ -56,7 +58,7 @@ hi Keyword          guifg=#AABDCA  guibg=NONE  gui=NONE  ctermfg=NONE  ctermbg=N
 hi PreProc          guifg=#9e9e9e
 hi Conditional      guifg=#B0B0B0
 
-hi Todo             guifg=#FF3627  guibg=#000000
+hi Todo             guifg=#FFE266  guibg=#322900 gui=BOLD
 hi Constant         guifg=#8787D7
 
 hi Identifier       guifg=#ffffff

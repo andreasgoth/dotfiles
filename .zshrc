@@ -56,7 +56,7 @@ alias nvimcfg='nvim ~/.config/nvim/init.vim'
 alias nvimcolors='nvim ~/.config/nvim/colors/andreasgoth.vim'
 alias zshrc='nvim ~/.zshrc'
 alias hosts='sudo nvim /etc/hosts'
-alias todo='rg "TODO|INCOMPLETE|HACK|XXX|TBD|FIXME|REVIEW|REFACTOR|REMOVE|BUG" .'
+alias todo='rg "TODO|INCOMPLETE|HACK|XXX|TBD|FIXME|REVIEW|REFACTOR|REMOVE|BUG|DEBUG|BUG|NOTE" .'
 
 # zsh completion smartcase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

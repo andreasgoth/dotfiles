@@ -20,8 +20,21 @@ setopt INC_APPEND_HISTORY # Add timestamps to history
 
 # Initialize completion
 autoload -Uz compinit
-compinit -D
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 zstyle ':completion:*' menu select
+
+# Execute code in the background to not affect the current session
+{
+  # Compile zcompdump, if modified, to increase startup speed.
+  zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
+    zcompile "$zcompdump"
+  fi
+}
 
 # Colorize terminal
 alias l='ls -lAFhG'

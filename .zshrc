@@ -45,8 +45,8 @@ export HISTSIZE=100000
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=$HISTSIZE
 
-# Use vim as the editor
-export EDITOR=vim
+# Use nvim as the editor
+export EDITOR=nvim
 
 # Aliases
 function mkcd() { mkdir -p $1 && cd $1 }

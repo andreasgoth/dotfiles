@@ -83,10 +83,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Python
-export PATH="/Users/andreasgoth/Library/Python/2.7/bin:$PATH"
-
-# start typing + [Up-Arrow] - fuzzy find history forward
+# Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
   autoload -U up-line-or-beginning-search
   zle -N up-line-or-beginning-search
@@ -95,7 +92,7 @@ if [[ "${terminfo[kcuu1]}" != "" ]]; then
   bindkey "^[[B" down-line-or-beginning-search # Down
 fi
 
-# start typing + [Down-Arrow] - fuzzy find history backward
+# Start typing + [Down-Arrow] - fuzzy find history backward
 if [[ "${terminfo[kcud1]}" != "" ]]; then
   autoload -U down-line-or-beginning-search
   zle -N down-line-or-beginning-search
@@ -106,6 +103,8 @@ bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
 
 if [[ "${terminfo[kcbt]}" != "" ]]; then
-  bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
+  # [Shift-Tab] - move through the completion menu backwards
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
+export PATH="/usr/local/opt/sqlite/bin:$PATH"

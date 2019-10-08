@@ -64,11 +64,8 @@ if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
 }
 
 # Directories
-alias repo='cd ~/repos'
-alias repos='cd ~/repos'
-alias lr='cd ~/repos/fsm/livereplayer'
-alias lrweb='cd ~/repos/fsm/livereplayer/webapp'
-alias fsmapp='cd ~/repos/fsm/app'
+alias repo='cd ~/Documents/repos'
+alias repos='cd ~/Documents/repos'
 alias nvimcfg='nvim ~/.config/nvim/init.vim'
 alias nvimcolors='nvim ~/.config/nvim/colors/andreasgoth.vim'
 alias zshrc='nvim ~/.zshrc'

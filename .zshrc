@@ -14,6 +14,10 @@ autoload -Uz promptinit
 promptinit
 prompt andreasgoth
 
+# Settings
+setopt EXTENDED_HISTORY   # Add timestamps to history
+setopt INC_APPEND_HISTORY # Add timestamps to history
+
 # Initialize completion
 autoload -Uz compinit
 compinit -D

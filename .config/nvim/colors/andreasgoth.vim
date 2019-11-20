@@ -12,15 +12,15 @@ endif
 syntax keyword jsCommentTodo contained TODO FIXME XXX TBD INCOMPLETE DEBUG BUG NOTE REVIEW REFACTOR REMOVE HACK @todo
 
 " General colors
-hi Normal           guifg=#f6f3e8   guibg=#161616   gui=NONE
-hi NonText          guifg=#070707   guibg=black     gui=NONE
+hi Normal           guifg=#f6f3e8   guibg=NONE      gui=NONE
+hi NonText          guifg=#070707   guibg=NONE      gui=NONE
 
 hi Cursor           guifg=black     guibg=220       gui=NONE
 hi CursorLine       guifg=NONE      guibg=#121212
-hi CursorLineNR     guifg=#cccccc   guibg=#000000
+hi CursorLineNR     guifg=#999999   guibg=#000000
 hi CursorColumn     guifg=NONE      guibg=#121212   gui=NONE
-hi ColorColumn                      guibg=#111111
-hi LineNr           guifg=#3D3D3D   guibg=black     gui=NONE
+hi ColorColumn                      guibg=#1a1a1a
+hi LineNr           guifg=#444444   guibg=NONE      gui=NONE
 
 hi VertSplit        guifg=#202020   guibg=#202020   gui=NONE
 hi StatusLine       guifg=#ffffff   guibg=#000000   gui=italic

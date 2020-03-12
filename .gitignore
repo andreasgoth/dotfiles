@@ -1,70 +1,74 @@
+!/Library/Application\ Support
+!/Library/Application\ Support/Code
+!/Library/Application\ Support/Code/User
+!/Library/Application\ Support/Code/User
+!/Library/Services
+!Library/Application\ Support/Code/User/keybindings.json
+!Library/Application\ Support/Code/User/settings.json
 .DS_Store
-/.yarn
-/.zsh_history
-/.zcompdump*
-/.expo
-/.config/coc
-/.local
-/.aws
-/.vscode-history
-/gems
-/.rustup
-/.terraform.d
-/.config/configstore
-/.rncache
-/.gnupg*
-/.slocdata
-/VirtualBox\ VMs
-/.task
-/.docker
-/.electrum
-/.vagrant.d
-/.phpls
-/.rbenv
-/.bundle
-/.gem
-/.mix
-/.hex
-/.LiveReplayer*
-/.itmstransporter
-/.CFUserTextEncoding
-/.history
-/.lesshsQ
-/.lesshst
-/.node-gyp
-/.node_repl_history
-/.ssh
-/.npm
 /*.swp
-/.viminfo
+/.CFUserTextEncoding
+/.LiveReplayer*
 /.LiveReplayer-meta
 /.Trash
+/.aws
+/.bundle
 /.cache
-/.composer
 /.cargo
+/.chef
+/.cocoapods
+/.composer
+/.config/coc
+/.config/configstore
+/.docker
+/.electrum
+/.expo
+/.gem
+/.gnupg*
+/.hex
+/.history
+/.itmstransporter
+/.lesshsQ
+/.lesshst
+/.local
+/.mix
+/.newtek
+/.node-gyp
+/.node_repl_history
+/.npm
+/.phpls
+/.rbenv
+/.rncache
+/.rustup
+/.serverless
+/.slocdata
+/.ssh
+/.task
+/.terraform.d
+/.vagrant.d
 /.vim/.netrwhist
-/Creative\ Cloud\ Files
+/.viminfo
 /.vscode
+/.vscode-history
+/.yarn
+/.zcompdump*
+/.zsh_history
 /Applications
+/Creative\ Cloud\ Files
 /Desktop
 /Documents
 /Downloads
-/Movies
 /Library/*
-!/Library/Services
-!/Library/Application\ Support
 /Library/Application\ Support/*
-!/Library/Application\ Support/Code
 /Library/Application\ Support/Code/*
-!/Library/Application\ Support/Code/User
-!/Library/Application\ Support/Code/User
-!Library/Application\ Support/Code/User/settings.json
-!Library/Application\ Support/Code/User/keybindings.json
-Library/Application Support/Code/User/workspaceStorage
+/Movies
 /Music
 /Pictures
 /Public
-/repos
+/VirtualBox\ VMs
+/gems
 /private
 /process
 /projects
+/repos
+Library/Application Support/Code/User/workspaceStorage

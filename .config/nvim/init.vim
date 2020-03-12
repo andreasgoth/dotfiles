@@ -6,7 +6,7 @@ if !exists("g:syntax_on")
 endif
 
 let mapleader=" "
-map <leader>s :source ~/.config/nvim/init.vim<cr>
+map <leader>§ :source ~/.config/nvim/init.vim<cr>
 
 " Colors
 set termguicolors

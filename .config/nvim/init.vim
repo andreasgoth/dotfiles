@@ -142,16 +142,18 @@ map <leader>n :call RenameFile()<cr>
 
 " Plugins
 call plug#begin('~/.config/nvim/plugins')
+Plug '/usr/local/opt/fzf'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'w0rp/ale'
+" Langs, highlighting etc
+Plug 'elixir-editors/vim-elixir'
+Plug 'evanleck/vim-svelte'
 Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
-Plug 'elixir-editors/vim-elixir'
-Plug 'airblade/vim-gitgutter'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " EasyAlign

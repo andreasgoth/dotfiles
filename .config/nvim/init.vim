@@ -148,6 +148,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
+Plug 'tpope/vim-commentary'
 " Langs, highlighting etc
 Plug 'elixir-editors/vim-elixir'
 Plug 'evanleck/vim-svelte'

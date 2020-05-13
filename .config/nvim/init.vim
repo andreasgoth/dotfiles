@@ -13,6 +13,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
+Plug 'burntsushi/ripgrep'
 
 " Langs etc
 Plug 'elixir-editors/vim-elixir'
@@ -168,7 +169,7 @@ let g:javascript_plugin_jsdoc = 1
 " FZF
 nnoremap <c-t> :GFiles --exclude-standard --others --cached<cr>
 nnoremap <c-p> :GFiles --exclude-standard --others --cached<cr>
-nnoremap <c-f> :Ag<cr>
+nnoremap <c-f> :Rg<cr>
 nnoremap <c-l> :Lines<cr>
 
 " Gutentags - enable in defined dirs, or dirs with .withtags

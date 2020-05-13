@@ -51,6 +51,7 @@ export EDITOR=nvim
 # Aliases
 function mkcd() { mkdir -p $1 && cd $1 }
 alias lock="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
+alias noFileVaultNextReboot='sudo fdesetup authrestart -delayminutes -1'
 
 # Set Apple Terminal.app resume directory
 # Makes new tab/window open in same working directory work

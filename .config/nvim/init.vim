@@ -255,6 +255,9 @@ ino <down>  <Nop>
 ino <left>  <Nop>
 ino <right> <Nop>
 
+let g:coc_filetype_map = {
+\ 'scss': 'css',
+\ }
 
 " ----------------------------------------------------------------------------
 "   Auto commands

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>483</string>
+	<string>492</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -61,7 +61,7 @@
 					<key>COMMAND_STRING</key>
 					<string>for f in "$@"
 do
-/usr/local/bin/ffmpeg -i "$f" -vcodec h264 -pix_fmt yuv420p -vf "scale='bitand(oh*dar, 65534)':'bitand(ih/2, 65534)', setsar=1" -y "${f%.*}.mp4"
+/usr/local/bin/ffmpeg -i "$f" -vcodec h264 -pix_fmt yuv420p "${f%.*}.mp4"
 done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>

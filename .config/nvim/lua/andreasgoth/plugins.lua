@@ -1,0 +1,142 @@
+--
+-- Install Lazy plugin manager
+------------------------------------------------------------------------------
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+--
+-- Plugin config
+------------------------------------------------------------------------------
+
+require('lazy').setup({
+
+    -- Fuzzy finder
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.2',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build = 'make',
+                cond = function()
+                    return vim.fn.executable 'make' == 1
+                end,
+            },
+        },
+    },
+
+    -- Parser
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function ()
+            local configs = require("nvim-treesitter.configs")
+
+            configs.setup({
+                ensure_installed = {
+                    "bash",
+                    "c",
+                    "c",
+                    "cpp",
+                    "go",
+                    "html",
+                    "javascript",
+                    "lua",
+                    "objc",
+                    "python",
+                    "query",
+                    "rust",
+                    "typescript",
+                    "vim",
+                    "vimdoc",
+                },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end
+    },
+
+    -- Comments
+    {
+        'numToStr/Comment.nvim',
+        opts = {},
+        lazy = false,
+    },
+
+    -- Fun
+    {
+        'eandrju/cellular-automaton.nvim',
+        lazy = true,
+        keys = {{ '<leader>mr', '<cmd>CellularAutomaton make_it_rain<cr>' }},
+    },
+
+    -- Language Server
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            { 'williamboman/mason.nvim', config = true },
+            {'williamboman/mason-lspconfig.nvim'},
+        }
+    },
+
+    -- Status indicator for LSP
+    {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        opts = {
+            text = { spinner = "dots_footsteps" },
+            window = { blend = 0 }
+        }
+    },
+
+    -- Autocompletion
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            -- Snippet Engine & its associated nvim-cmp source
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+
+            {'hrsh7th/cmp-nvim-lsp'}, -- LSP completion capabilities
+        }
+    },
+
+    -- Undo
+    {
+        'mbbill/undotree',
+        keys = { '<leader>u', '<cmd>UndotreeToggle<cr>' },
+    },
+
+    -- Git
+    {
+        'tpope/vim-fugitive',
+        keys = {
+            { '<leader>gs', vim.cmd.Git, desc = 'Git' }
+        }
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        opts = {
+            signs = {
+                add = { text = '+' },
+                change = { text = '~' },
+                delete = { text = '_' },
+                topdelete = { text = '‾' },
+                changedelete = { text = '~' },
+            },
+        }
+    }
+})

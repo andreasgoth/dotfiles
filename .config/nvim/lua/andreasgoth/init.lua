@@ -5,10 +5,10 @@ require("andreasgoth.plugins") -- Must be below leader keymap
 -- General config
 -------------------------------------------------------------------------------
 --vim.cmd.colorscheme("andreasgoth")
-vim.g.colors_name = "andreasgoth"
+--vim.g.colors_name = "andreasgoth"
+vim.g.colors_name = "andreasgoth_light"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
 
 -------------------------------------------------------------------------------
 -- Set
@@ -16,16 +16,17 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.opt.title = true
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+--vim.opt.background = "dark"
 --vim.opt.pumblend = 10 --Enables pseudo-transparency for the popup-menu
+vim.o.statuscolumn = "%C%s%l "
 
 -- Editing
 vim.opt.fileencoding = 'utf-8'
 vim.opt.signcolumn = "yes"
 vim.opt.guicursor = "" -- Fat cursor
-vim.opt.wrap = false
+--vim.opt.wrap = false
 vim.opt.swapfile = false
-vim.opt.colorcolumn = "80,100,120"
+vim.opt.colorcolumn = "80"
 vim.opt.cursorline  = true
 vim.opt.number = true
 vim.opt.scrolloff = 10 -- Min number of lines to keep above/below the cursor
@@ -36,6 +37,7 @@ vim.opt.switchbuf = "useopen"
 vim.opt.undofile = true
 vim.opt.completeopt = 'menuone,noselect'
 --vim.opt.breakindent = true  -- wrapped line will continue visually indented
+vim.opt.inccommand = 'split'
 
 -- No idea how this effects performence
 vim.opt.updatetime = 250 -- time to updating things (gutter/diagnostics etc)
@@ -54,15 +56,12 @@ vim.opt.smartcase = true -- Override 'ignorecase' if search contains upper case
 -- 'Invisible' characters
 vim.opt.list = true
 vim.opt.listchars = {
-  extends = "❯",
-  nbsp = "␣",
-  precedes = "❮",
-  trail = "·",
-  tab = "▸ ",
+    extends = "❯",
+    nbsp = "␣",
+    precedes = "❮",
+    trail = "·",
+    tab = "▸ ",
 }
-
--- Kepmaps
-vim.g.mapleader = " "
 
 -- vim.keymap.set("n", "<c-c>", "<esc>")
 vim.keymap.set("n", "<esc>", ":noh<return><esc>")
@@ -112,37 +111,37 @@ vim.opt.statusline = "%1* %{expand('%:h')}%2* %t%m %3*%y *%= %-3v %l/%L"
 
 -- Indentation
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "html",
-  command = "setlocal ts=4 sts=4 sw=4 expandtab"
+    pattern = "html",
+    command = "setlocal ts=4 sts=4 sw=4 expandtab"
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "javascript",
-  command = "setlocal ts=2 sts=2 sw=2 expandtab"
+    pattern = "javascript",
+    command = "setlocal ts=2 sts=2 sw=2 expandtab"
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "css",
-  command = "setlocal ts=2 sts=2 sw=2 expandtab"
+    pattern = "css",
+    command = "setlocal ts=2 sts=2 sw=2 expandtab"
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "php",
-  command = "setlocal ts=4 sts=4 sw=4 expandtab"
+    pattern = "php",
+    command = "setlocal ts=4 sts=4 sw=4 expandtab"
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "gitcommit",
-  command = "setlocal spell textwidth=72"
+    pattern = "gitcommit",
+    command = "setlocal spell textwidth=72"
 })
 
 -- Remove trailing whitespace on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  command = [[%s/\s\+$//e]],
+    command = [[%s/\s\+$//e]],
 })
 
 -- Highlight yank
 vim.api.nvim_create_autocmd({"TextYankPost"}, {
-  pattern = { "*" },
-  callback = function()
-    vim.highlight.on_yank()
-  end
+    pattern = { "*" },
+    callback = function()
+        vim.highlight.on_yank()
+    end
 })
 
 
@@ -181,30 +180,30 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
+    function(server_name)
+        require('lspconfig')[server_name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = servers[server_name],
+            filetypes = (servers[server_name] or {}).filetypes,
+        }
+    end
 }
 
 -- Lua
 require("lspconfig").lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals  = { "vim" }
-      },
-      workspace = {
-        library = {
-          vim.env.VIMRUNTIME
-        },
-      },
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals  = { "vim" }
+            },
+            workspace = {
+                library = {
+                    vim.env.VIMRUNTIME
+                },
+            },
+        }
     }
-  }
 }
 
 -- Configure nvim-cmp
@@ -214,44 +213,44 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
+    mapping = cmp.mapping.preset.insert {
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete {},
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+    },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    },
 }
 
 
@@ -302,11 +301,11 @@ pcall(require('telescope').load_extension, 'fzf')
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
+    -- You can pass additional configuration to telescope to change theme, layout, etc.
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<c-p>', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
@@ -316,3 +315,12 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
+
+-------------------------------------------------------------------------------
+-- Providers
+-------------------------------------------------------------------------------
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
